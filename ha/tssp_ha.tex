@@ -174,6 +174,228 @@ if Ilya chooses a road at random?
 
 Deadline: \textbf{2022-10-02, 21:00}. 
 
+\newpage
+
+\section*{Home Assignment 2}
+
+Hereinafter $(W_t)$ is a standard Wiener process.  
+
+\begin{enumerate}
+
+  
+  \item Some questions about Wiener process!
+  \begin{enumerate}
+    \item Find $\E(W_7 \mid W_5)$, $\Var(W_7\mid W_5)$, $\E(W_7 W_6 \mid W_5)$.
+    \item Find $\E(W_5 \mid W_7)$, $\Var(W_5\mid W_7)$.
+  \end{enumerate}
+  
+  \item Using Ito's lemma find $dX$ and the corresponding full form.
+  \begin{enumerate}
+    \item $X_t = W_t^6 \cos t$.
+    \item $X_t = Y_t^3 + t^2 Y_t$ where $dY_t = W_t^2 dW_t + tW_t dt$.
+  \end{enumerate}
+
+  %\item Consider a standard Wiener process $(W_t)$.
+  %\begin{enumerate}
+  %  \item Find the expected value $M(u) = \E(\exp(u W_t))$. It's called moment generating function :)
+  %  \item What is the probabilistic meaning of $M'''(0)$?
+  %  
+  %  Hint: you may interchange expected value and derivative without proof. 
+  %  \item Using the Taylor expansion for $M(u)$ find at once all the expected values of $\E(W_t^k)$ for $k\in \mathbb N$.
+  %  
+  %  Hint: 
+  %  \[
+  %  \exp(a) = 1 + a + \frac{a^2}{2!} + \frac{a^3}{3!} + \ldots  = f(0) + f'(0) a + \frac{f''(0)}{2!}a^2 + \frac{f'''(0)}{3!}a^3 +  \ldots
+  %  \]
+  % \end{enumerate}
+
+  \item Consider two independent Wiener processes $A_t$ and $B_t$.
+  Check whether these processes are Wiener processes:
+  \begin{enumerate}
+    \item $X_t = (A_t + B_t) / 2$.
+    \item $Y_t = (A_t + B_t) / \sqrt{2}$.
+  \end{enumerate}
+
+  \item Consider $I_t = \int_0^t W_u^2 u^2 du$. 
+  Find $\E(I_t)$, $\Var(I_t)$ and $\Cov(I_t, W_t)$.
+
+
+  \item Find limits in $L^2$ of the following sequences for $n\to \infty$:
+  \begin{enumerate}
+%    \item Non-stochastic one first:
+%    \[
+%      R_n = \sum_{i=1}^n \left(h(it/n) - h((i-1)t/n)\right)^2, \text{ where } h(u) = 3u^2.
+%    \]
+    \item 
+    \[
+    S_n = \sum_{i=1}^n (t/n)\left(W(it/n) - W((i-1)t/n)\right).
+    \]
+    \item 
+    \[
+      T_n = \sum_{i=1}^n \left(W(it/n) - W((i-1)t/n)\right)^5.
+    \]
+  \end{enumerate}
+  
+
+  \item (bonus) Let's split the time segment $[0;10]$ into $n=10^5$ sub-segments of equal lentgh. 
+  Let $\Delta_i$ be equal to the corresponding increment of Wiener process, 
+  $\Delta_i = W(10i/n) - W(10(i-1)/n)$. 
+   \begin{enumerate}
+     \item What is the distribution of $\Delta_i$?
+     \item Using any open source software simulate five approximate trajectories of Wiener process and plot them 
+     on the same plot. You can generate $\Delta_i$ and find a cumulative sum. 
+     \item Now simulate $n_{sim} = 10^4$ trajectories but do not plot them. 
+     Using these trajectories estimate the probability $p = \P(\max_{t \in [0;10]}W_t > 7)$. 
+   \end{enumerate}
+   
+   Do not forget to provide your code. 
+ 
+
+\end{enumerate}
+
+
+Deadline: \textbf{2022-12-06, 21:00}. 
+
+
+
+\newpage
+
+\section*{Home Assignment 3}
+
+\begin{enumerate}
+\item Let $X_t = 42 + t^2W_t^3 + tW_t^2 + \int_0^t 3W_u du + \int_0^t W_u^3 dW_u$.
+\begin{enumerate}
+  \item Find $dX_t$.
+  \item Is $X_t$ a martingale? Is $Y_t = X_t - \E(X_t)$ a martingale? 
+\end{enumerate}
+
+Hint: only the binary answer for (b) is not sufficient but the argument is very-very short if you solve (a). 
+
+\item Consider $I_t = \int_0^t W_u^2 u^2 dW_u$. 
+
+\begin{enumerate}
+  \item Find $dI_t$, $\E(I_t)$, $\Var(I_t)$ and $\Cov(I_t, W_t)$.
+  \item Find $\E(I_5 \mid I_3)$.
+\end{enumerate}
+
+
+\item In the framework of Black and Scholes model find the price at $t=0$ of the following two 
+financial assets, $dS_t = \mu S_t dt + \sigma S_t dW_t$ is the share price equation. 
+\begin{enumerate}
+  \item The asset pays you at time $T$ exactly one dollar if $S_T < K$ where $K$ is a constant 
+  specified in the contract. 
+  \item The asset pays you at time $T$ exactly $S_T^2$ dollars.
+\end{enumerate}
+
+
+
+\item Consider the Vasicek interest rate model, 
+\[
+  dR_t=5(0.06 - R_t) \, dt + 3 \, dW_t, \quad R_0 = 0.07.
+\]
+Here $R_t$ is the interest rate.
+\begin{enumerate}
+\item Using the substitution $Y_t=e^{at} R_t$ find the solution of the stochastic differential equation.
+Start by finding $dY_t$. 
+\item Find $\E(R_t)$ and $\Var(R_t)$.
+\item Which value in this model would you call long-term equilibrium rate and why?
+\end{enumerate}
+
+Hint: you may have integrals in you expression for $R_t$, but no $R_t$.
+
+\item Let $X_t$ be the exchange rate measured in roubles per dollar. 
+We suppose that $dX_t = \mu X_t dt + \sigma X_t dW_t$. 
+
+Consider the inverse exchange rate $Y_t = 1/X_t$ measured in dollars per rouble. 
+
+Write the stochastic differential equation for $dY_t$. 
+The equation may contain $Y_t$ and constants, but not $X_t$.
+
+
+\end{enumerate}
+
+
+Deadline: \textbf{2022-12-18, 21:00}. 
+
+\end{document}
+
+  
+  \end{enumerate}
+  
+
+\end{enumerate}
+
+
+Deadline: \textbf{2021-12-04, 21:00}. 
+
+
+
+
+
+
+\newpage
+
+\section*{Home Assignment 3}
+
+\begin{enumerate}
+\item Let $X_t = 42 + t^2W_t^3 + tW_t^2 + \int_0^t 3W_u du + \int_0^t W_u^3 dW_u$.
+\begin{enumerate}
+  \item Find $dX_t$.
+  \item Is $X_t$ a martingale? Is $Y_t = X_t - \E(X_t)$ a martingale? 
+\end{enumerate}
+
+Hint: only the binary answer for (b) is not sufficient but the argument is very-very short if you solve (a). 
+
+\item Consider $I_t = \int_0^t W_u^2 u^2 dW_u$. 
+
+\begin{enumerate}
+  \item Find $dI_t$, $\E(I_t)$, $\Var(I_t)$ and $\Cov(I_t, W_t)$.
+  \item Find $\E(I_5 \mid I_3)$.
+\end{enumerate}
+
+
+\item In the framework of Black and Scholes model find the price at $t=0$ of the following two 
+financial assets, $dS_t = \mu S_t dt + \sigma S_t dW_t$ is the share price equation. 
+\begin{enumerate}
+  \item The asset pays you at time $T$ exactly one dollar if $S_T < K$ where $K$ is a constant 
+  specified in the contract. 
+  \item The asset pays you at time $T$ exactly $S_T^2$ dollars.
+\end{enumerate}
+
+
+
+\item Consider the Vasicek interest rate model, 
+\[
+  dR_t=5(0.06 - R_t) \, dt + 3 \, dW_t, \quad R_0 = 0.07.
+\]
+Here $R_t$ is the interest rate.
+\begin{enumerate}
+\item Using the substitution $Y_t=e^{at} R_t$ find the solution of the stochastic differential equation.
+Start by finding $dY_t$. 
+\item Find $\E(R_t)$ and $\Var(R_t)$.
+\item Which value in this model would you call long-term equilibrium rate and why?
+\end{enumerate}
+
+Hint: you may have integrals in you expression for $R_t$, but no $R_t$.
+
+\item Let $X_t$ be the exchange rate measured in roubles per dollar. 
+We suppose that $dX_t = \mu X_t dt + \sigma X_t dW_t$. 
+
+Consider the inverse exchange rate $Y_t = 1/X_t$ measured in dollars per rouble. 
+
+Write the stochastic differential equation for $dY_t$. 
+The equation may contain $Y_t$ and constants, but not $X_t$.
+
+
+\end{enumerate}
+
+
+Deadline: \textbf{2021-12-12, 21:00}. 
+
+\end{document}
+
+
+
 \end{document}
 
 \section*{Home Assignment 2}
@@ -233,8 +455,6 @@ Ilya wins if HTH appears and Zmei wins if TTH appears.
 
 Deadline: \textbf{2021-10-09, 21:00}. 
 
-
-\end{document}
 
 
 
@@ -426,140 +646,6 @@ Deadline: \textbf{2021-11-16, 21:00}.
 
 \newpage
 
-\section*{Home Assignment 5}
-
-Hereinafter $(W_t)$ is a standard Wiener process.  
-
-\begin{enumerate}
-
-  
-  \item Some questions about Wiener process!
-  \begin{enumerate}
-    \item Find $\E(W_7 \mid W_5)$, $\Var(W_7\mid W_5)$, $\E(W_7 W_6 \mid W_5)$.
-    \item Find $\E(W_5 \mid W_7)$, $\Var(W_5\mid W_7)$.
-  \end{enumerate}
-  
-  \item Using Ito's lemma find $dX$ and the corresponding full form.
-  \begin{enumerate}
-    \item $X_t = W_t^6 \cos t$.
-    \item $X_t = Y_t^3 + t^2 Y_t$ where $dY_t = W_t^2 dW_t + tW_t dt$.
-  \end{enumerate}
-
-  \item Consider a standard Wiener process $(W_t)$.
-  \begin{enumerate}
-    \item Find the moment generating function of $W_t$, $M(u) = \E(\exp(u W_t))$.
-    \item Using the Taylor expansion for $M(u)$ find the $\E(W_t^k)$ for $k\in \mathbb N$.
-  \end{enumerate}
-
-  \item Consider two independent Wiener processes $A_t$ and $B_t$.
-  Check whether these processes are Wiener processes:
-  \begin{enumerate}
-    \item $X_t = (A_t + B_t) / 2$.
-    \item $Y_t = (A_t + B_t) / \sqrt{2}$.
-  \end{enumerate}
-
-  \item Consider $I_t = \int_0^t W_u^2 u^2 du$. 
-  Find $\E(I_t)$, $\Var(I_t)$ and (bonus) $\Cov(I_t, W_t)$.
-
-  \item (bonus) Let's split the time segment $[0;10]$ into $n=10^5$ sub-segments of equal lentgh. 
- Let $\Delta_i$ be equal to the corresponding increment of Wiener process, 
- $\Delta_i = W(10i/n) - W(10(i-1)/n)$. 
-  \begin{enumerate}
-    \item What is the distribution of $\Delta_i$?
-    \item Using any open source software simulate five approximate trajectories of Wiener process and plot them 
-    on the same plot. 
-    \item Now simulate $n_{sim} = 10^4$ trajectories but do not plot them. 
-    Using these trajectories estimate the probability $p = \P(\max_{t \in [0;10]}W_t > 7)$. 
-  \end{enumerate}
-  
-  Do not forget to provide your code. 
-
-  \item (bonus) Find the following limits in $L^2$.
-  \begin{enumerate}
-%    \item Non-stochastic one first:
-%    \[
-%      R_n = \sum_{i=1}^n \left(h(it/n) - h((i-1)t/n)\right)^2, \text{ where } h(u) = 3u^2.
-%    \]
-    \item 
-    \[
-    S_n = \sum_{i=1}^n (t/n)\left(W(it/n) - W((i-1)t/n)\right).
-    \]
-    \item 
-    \[
-      T_n = \sum_{i=1}^n \left(W(it/n) - W((i-1)t/n)\right)^3.
-    \]
-  
-  \end{enumerate}
-  
-
-\end{enumerate}
-
-
-Deadline: \textbf{2021-12-04, 21:00}. 
-
-
-
-
-
-
-\newpage
-
-\section*{Home Assignment 6}
-
-\begin{enumerate}
-\item Let $X_t = 42 + t^2W_t^3 + tW_t^2 + \int_0^t 3W_u du + \int_0^t W_u^3 dW_u$.
-\begin{enumerate}
-  \item Find $dX_t$.
-  \item Is $X_t$ a martingale? Is $Y_t = X_t - \E(X_t)$ a martingale? 
-\end{enumerate}
-
-Hint: only the binary answer for (b) is not sufficient but the argument is very-very short if you solve (a). 
-
-\item Consider $I_t = \int_0^t W_u^2 u^2 dW_u$. 
-
-\begin{enumerate}
-  \item Find $dI_t$, $\E(I_t)$, $\Var(I_t)$ and $\Cov(I_t, W_t)$.
-  \item Find $\E(I_5 \mid I_3)$.
-\end{enumerate}
-
-
-\item In the framework of Black and Scholes model find the price at $t=0$ of the following two 
-financial assets, $dS_t = \mu S_t dt + \sigma S_t dW_t$ is the share price equation. 
-\begin{enumerate}
-  \item The asset pays you at time $T$ exactly one dollar if $S_T < K$ where $K$ is a constant 
-  specified in the contract. 
-  \item The asset pays you at time $T$ exactly $S_T^2$ dollars.
-\end{enumerate}
-
-
-
-\item Consider the Vasicek interest rate model, 
-\[
-  dR_t=5(0.06 - R_t) \, dt + 3 \, dW_t, \quad R_0 = 0.07.
-\]
-Here $R_t$ is the interest rate.
-\begin{enumerate}
-\item Using the substitution $Y_t=e^{at} R_t$ find the solution of the stochastic differential equation.
-Start by finding $dY_t$. 
-\item Find $\E(R_t)$ and $\Var(R_t)$.
-\item Which value in this model would you call long-term equilibrium rate and why?
-\end{enumerate}
-
-Hint: you may have integrals in you expression for $R_t$, but no $R_t$.
-
-\item Let $X_t$ be the exchange rate measured in roubles per dollar. 
-We suppose that $dX_t = \mu X_t dt + \sigma X_t dW_t$. 
-
-Consider the inverse exchange rate $Y_t = 1/X_t$ measured in dollars per rouble. 
-
-Write the stochastic differential equation for $dY_t$. 
-The equation may contain $Y_t$ and constants, but not $X_t$.
-
-
-\end{enumerate}
-
-
-Deadline: \textbf{2021-12-12, 21:00}. 
 
 
 
