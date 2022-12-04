@@ -271,12 +271,28 @@ Deadline: \textbf{2022-12-06, 21:00}.
 
 Hint: only the binary answer for (b) is not sufficient but the argument is very-very short if you solve (a). 
 
-\item Consider $I_t = \int_0^t W_u^2 u^2 dW_u$. 
 
-\begin{enumerate}
-  \item Find $dI_t$, $\E(I_t)$, $\Var(I_t)$ and $\Cov(I_t, W_t)$.
-  \item Find $\E(I_5 \mid I_3)$.
-\end{enumerate}
+
+
+\begin{minipage}{0.42\linewidth}
+  \includegraphics[width=7cm]{tree.jpg}  
+\end{minipage}
+%
+\begin{minipage}{0.58\linewidth}
+  \item Consider two-period binomial tree model without dividents.
+  Initial stock price is $S_0 = 200$, 
+  in each period the stock price is multiplied by $u=1.15$ or by $d=0.75$. 
+  One period interest rate is $r=0.05$. 
+  
+  \begin{enumerate}
+  \item Find the risk-neutral probability. 
+  \item Price the following binary option: at time $T=2$ you get $100\$ $ if $S_1 > 200$ and nothing otherwise. 
+  \item Price the following chooser option: at $t=1$ the owner 
+  of the option decides whether the option is call or put. The strike price 
+  is $K=200$ and expiry date is $T=2$. 
+  \end{enumerate}
+  \end{minipage}
+
 
 
 \item In the framework of Black and Scholes model find the price at $t=0$ of the following two 
