@@ -333,7 +333,109 @@ The equation may contain $Y_t$ and constants, but not $X_t$.
 
 Deadline: \textbf{2022-12-18, 21:00}. 
 
+\section*{Home Assignment 4: stationarity, white noise, MA model}
+\begin{enumerate}
+  \item The process $(u_t)$ is a white noise. 
+  Consider the processes $a_t = (1+L)^3 u_t$ and 
+  $b_t = t^2 + 6t + (1-2L)^2 u_t$. %, $b_t = \frac{1}{1-0.3 L}u_t$, $c_t = \frac{1 - 0.3F}{1-0.3L}u_t$, $d_t = \frac{1 - 0.4F}{1-0.3L}u_t$.
+  
+  \begin{enumerate}
+    \item Write explicit expression of these processes without lag $L$ operator.
+    \item Check whether these processes are stationary.
+    \item For stationary processes find the autocorrelation function. 
+    \item Check whether these processes are white noises.
+    \item If the process is $MA(k)$ process with respect to $(u_t)$ then find the value of $k$.  
+    
+  \end{enumerate}
+
+  \item The process $(y_t)$ is stationary with $\gamma_k = \Cov(y_t, y_{t+k})$.
+  Consider the process  $b_{t}=4y_{t} - 3 y_{t-1} + 18$.
+
+  \begin{enumerate}
+    \item Find new covariances $\theta_k = \Cov(b_t, b_{t+k})$ in terms of old covariances $(\gamma_j)$.
+    \item Is $(b_t)$ stationary?
+  \end{enumerate}
+
+  \item Provide an example of two dependent processes $(a_t)$ and $(b_t)$ such that each of them is stationary, 
+  but their sum is not stationary. 
+
+
+  \item Consider three variables $(y_1, y_2, y_3)$ that are jointly normal
+  \[
+  y \sim \cN\left( \begin{pmatrix}
+    5 \\
+    6 \\
+    11 \\
+  \end{pmatrix}; \begin{pmatrix}
+    9 & 0 & -1 \\
+    0 & 4 & 1 \\
+    -1 & 1 & 4 \\
+  \end{pmatrix}  \right).  
+  \]
+
+  Find $\Corr(y_1, y_2)$ and $\pCorr(y_1, y_2 ; y_3)$.
+
+
+  \item (bonus) Variables $u_1$ and $u_2$ are independent $\cN(0;1)$. 
+  Consider the process $y_t = 7 + u_1 \cos (\pi t /2) + u_2 \sin (\pi t /2)$.
+
+  \begin{enumerate}
+    \item Find $\E(y_t)$, $\Var(y_t)$, $\gamma_k = \Cov(y_t, y_{t+k})$. 
+    \item Is $(y_t)$ stationary? Is it a white noise process?
+    \item Your know that $y_{100} = 0.2023$. What is your best prediction for $y_{104}$? What about predictive interval?
+    \item Is this process $MA(\infty)$ process with respect to \textit{some} white noise, not necessary $(u_t)$?
+  \end{enumerate}
+  
+\end{enumerate}
+
+
+
+\newpage
+
+\section*{Home Assignment 5: recurrence equations, AR-model, ACF/PACF}
+\begin{enumerate}
+  \item Consider the recurrence equation $y_t = 4 + 10 y_{t-1} + u_t$ where $(u_t)$ is the white noise.
+  \begin{enumerate}
+    \item Find two non-stationary solution.
+    \item Find one stationary solution. Does this solution have $MA(\infty)$ form with respect to $(u_t)$?
+  \end{enumerate}
+
+  \item Consider two equations (A) $y_t = 4 + 0.6 y_{y-1} + 0.2y_{t-2} + u_t$ and (B) $y_t = 3 + y_{t-1} + 6y_{t-2} + u_t$.
+  
+  \begin{enumerate}
+    \item How many non-stationary solutions does each equation have?
+    \item How many stationary solutions does each equation have?
+    \item How many stationary solutions that are $MA(\infty)$ with respect to $(u_t)$ does each equation have?
+  \end{enumerate}
+
+  \item For $MA(2)$ process $y_t = 5 + u_t + 3u_{t-2}$ find all values of the autocorrelation function $\rho_k$ and 
+  first two values of the partial autocorrelation function $\phi_{kk}$.
+
+  \item For stationary $AR(1)$ process with equation $y_t = 5 + 0.3y_{t-1} + u_t$ find all values of the autocorrelation function $\rho_k$ and 
+  all values of the partial autocorrelation function $\phi_{kk}$.
+
+  \item For stationary $AR(2)$ process with equation $y_t = 5 + 0.3y_{t-1} - 0.02 y_{t-2} + u_t$ find first two values of the autocorrelation function $\rho_k$ and 
+  all values of the partial autocorrelation function $\phi_{kk}$.
+
+  \item (bonus) Consider the process 
+  \[
+  y_t = \frac{1-0.7F}{1-0.7L} u_t,
+  \]
+  where $(u_t)$ is a white noise and $F$ is the forward operator. 
+  \begin{enumerate}
+    \item Write explicit expression for $(y_t)$ without lag nor forward operator.
+    \item Is $(y_t)$ a white noise?
+  \end{enumerate}
+\end{enumerate}
+
 \end{document}
+
+
+
+
+
+\end{document}
+
 
   
   \end{enumerate}
@@ -408,11 +510,21 @@ The equation may contain $Y_t$ and constants, but not $X_t$.
 
 Deadline: \textbf{2021-12-12, 21:00}. 
 
-\end{document}
+\newpage
 
 
 
-\end{document}
+
+
+\item Let $(y_t)$ be a stationary process with autocovariance function $\gamma_k = 20 \cdot 0.5^k$ and expected value $100$. 
+  You remove all odd observations and hence your have a new process $z_t = y_{2t}$. 
+
+  \begin{enumerate}
+    \item Is the new process $(z_t)$ stationary?
+    \item Draw the autocorrelation function of $(z_t)$ if it is stationary. 
+  \end{enumerate}
+
+
 
 \section*{Home Assignment 2}
 
